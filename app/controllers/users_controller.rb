@@ -32,6 +32,14 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def followings
+    @users=current_user.following_users
+  end
+
+  def followers
+    @users=current_user.follower_users
+  end
 
   private
 
